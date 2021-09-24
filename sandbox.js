@@ -30,7 +30,7 @@
 let game = () => {
     let winner = ''
     for (i = 0; i < 5; i++) {
-        let selection = prompt('Rock, Paper or Scissors?')
+       // let selection = prompt('Rock, Paper or Scissors?')
         let playerSelection = selection[0].toUpperCase() + selection.slice(1).toLowerCase();
 
         let computerPlay = ['Rock', 'Paper', 'Scissors']
