@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title>Rock, Paper, Scissor</title>
@@ -7,22 +7,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Rock, Paper, Scissors</h1>
-        <div class='container'>
-        <div class='player selection'>
-            <h3>Player Selection:</h3>
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
-            
+        <h1>✊   ✋  ✌</h1>
+        <div class="results">
+        <div>
+            Your score:
+            <span class="result-score" data-your-score=>0</span>
         </div>
-        <div class='computer selection'>
-            <h3>Computer:</h3>
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
+        <div>Computer score:
+            <span class="result-score" data-computer-score>0</span>
         </div>
     </div>
-    <div class='result'>Result:</div>
+        <div class='selections'>
+            <button class='player selection' data-selection="rock">Rock</button>
+            <button class='player selection' data-selection="paper">Paper</button>
+            <button class='player selection' data-selection="scissors">Scissors</button>
+         </div>
+         <p class = 'player'></p>
+         <p class='computer'></p>
+         <div class='final'>Result:
+    <span class='result'></span>
+</div>
     </body>
 </html>
