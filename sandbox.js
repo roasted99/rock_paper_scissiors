@@ -15,7 +15,7 @@ function makeSelection(selectionName) {
     //document.querySelector('p.player').textContent = `You have selected ${selectionName}.`
     const computerSelection = randomSelection()
     document.querySelector('.computer').textContent = `Computer has selected "${computerSelection}".`
-    
+
     const playRound = (selectionName, computerSelection) => {
         if (selectionName == 'rock' && computerSelection == 'scissors') {
             return true
@@ -32,16 +32,16 @@ function makeSelection(selectionName) {
         } else if (selectionName == computerSelection) {
             return document.querySelector('span.result').textContent = 'Draw.'
         }
-         
+
     };
     const round = playRound(selectionName, computerSelection)
-     if (round == true) {
+    if (round == true) {
         return document.querySelector('span.result').textContent = `You win!"${selectionName}" beats "${computerSelection}".`,
-        document.querySelector('.player.score').innerText = parseInt(yourScoreSpan.innerText) + 1
-     } else if (round == false) {
+            document.querySelector('.player.score').innerText = parseInt(yourScoreSpan.innerText) + 1
+    } else if (round == false) {
         return document.querySelector('span.result').textContent = `You lose!"${computerSelection}" beats "${selectionName}".`,
-        document.querySelector('.comp.score').innerText = parseInt(computerScoreSpan.innerText) + 1
-     }
+            document.querySelector('.comp.score').innerText = parseInt(computerScoreSpan.innerText) + 1
+    }
 }
 
 function randomSelection() {
