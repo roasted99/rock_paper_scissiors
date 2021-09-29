@@ -14,7 +14,7 @@ playerSelections.forEach(playerSelection => {
 function makeSelection(selectionName) {
     //document.querySelector('p.player').textContent = `You have selected ${selectionName}.`
     const computerSelection = randomSelection()
-    document.querySelector('.computer').textContent = `Computer has selected ${computerSelection}.`
+    document.querySelector('.computer').textContent = `Computer has selected "${computerSelection}".`
     
     const playRound = (selectionName, computerSelection) => {
         if (selectionName == 'rock' && computerSelection == 'scissors') {
@@ -36,11 +36,11 @@ function makeSelection(selectionName) {
     };
     const round = playRound(selectionName, computerSelection)
      if (round == true) {
-        return document.querySelector('span.result').textContent = `You win!${selectionName} beats ${computerSelection}.`,
-        document.querySelector('.player.score').innerText = parseInt(.innerText) + 1
+        return document.querySelector('span.result').textContent = `You win!"${selectionName}" beats "${computerSelection}".`,
+        document.querySelector('.player.score').innerText = parseInt(yourScoreSpan.innerText) + 1
      } else if (round == false) {
-        return document.querySelector('span.result').textContent = `You lose!${computerSelection} beats ${selectionName}.`,
-        document.querySelector('.comp.score').innerText = parseInt(scoreSpan.innerText) + 1
+        return document.querySelector('span.result').textContent = `You lose!"${computerSelection}" beats "${selectionName}".`,
+        document.querySelector('.comp.score').innerText = parseInt(computerScoreSpan.innerText) + 1
      }
 }
 
