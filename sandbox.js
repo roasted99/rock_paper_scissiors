@@ -15,30 +15,35 @@ function makeSelection(selectionName) {
     //document.querySelector('p.player').textContent = `You have selected ${selectionName}.`
     const computerSelection = randomSelection()
     document.querySelector('.computer').textContent = `Computer has selected ${computerSelection}.`
+    
     const playRound = (selectionName, computerSelection) => {
-        const result = () => {
-            if (selectionName == 'rock' && computerSelection == 'scissors') {
-                return true
-            } else if (selectionName == 'paper' && computerSelection == 'rock') {
-                return true
-            } else if (selectionName == 'scissors' && computerSelection == 'paper') {
-                return true
-            } else {
-                return false
-            }
-        };
-        if (result == true) {
-           return console.log(`you win`)
-         // document.querySelector('span.result').textContent = `You win!${selectionName} beats ${computerSelection}.`
-        } else if (result == false) {
-           return console.log('you lose')
-         // document.querySelector('span.result').textContent = `You lose!${computerSelection} beats ${selectionName}.`
-        } else {
-            return console.log(draw)
-          //document.querySelector('span.result').textContent = 'Draw.'
+        if (selectionName == 'rock' && computerSelection == 'scissors') {
+            return true
+        } else if (selectionName == 'paper' && computerSelection == 'rock') {
+            return true
+        } else if (selectionName == 'scissors' && computerSelection == 'paper') {
+            return true
+        } else if (selectionName == 'rock' && computerSelection == 'paper') {
+            return false
+        } else if (selectionName == 'paper' && computerSelection == 'scissors') {
+            return false
+        } else if (selectionName == 'scissors' && computerSelection == 'rock') {
+            return false
+        } else if (selectionName == computerSelection) {
+            return document.querySelector('span.result').textContent = 'Draw.'
         }
-    }
+         
+    };
+    const round = playRound(selectionName, computerSelection)
+     if (round == true) {
+        return document.querySelector('span.result').textContent = `You win!${selectionName} beats ${computerSelection}.`,
+        document.querySelector('.player.score').innerText = parseInt(.innerText) + 1
+     } else if (round == false) {
+        return document.querySelector('span.result').textContent = `You lose!${computerSelection} beats ${selectionName}.`,
+        document.querySelector('.comp.score').innerText = parseInt(scoreSpan.innerText) + 1
+     }
 }
+
 function randomSelection() {
     const index = Math.floor(Math.random() * selections.length)
     return selections[index]
